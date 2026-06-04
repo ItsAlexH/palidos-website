@@ -5,12 +5,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // Scroll Reveal Animation using Intersection Observer
     const revealElements = document.querySelectorAll('.reveal');
     const observerOptions = { threshold: 0.15, rootMargin: '0px 0px -50px 0px' };
-    
+
     const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('active');
-                revealObserver.unobserve(entry.target); // Only animate once
+                revealObserver.unobserve(entry.target);
             }
         });
     }, observerOptions);
@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault();
         const btn = form.querySelector('button[type="submit"]');
         const originalText = btn.textContent;
-        
+
         btn.textContent = 'Sending...';
         btn.disabled = true;
 
@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 throw new Error('Form submission failed');
             }
         } catch (error) {
-            alert('Something went wrong. Please email us directly at hello@palidosconsulting.com');
+            alert('Something went wrong. Please email us directly at contact@palidos.net');
         } finally {
             btn.textContent = originalText;
             btn.disabled = false;
